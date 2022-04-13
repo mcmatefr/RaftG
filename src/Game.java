@@ -14,14 +14,16 @@ public class Game extends Canvas implements Runnable {
     private Handler handler;
     private HUD hud;
     private Spawn spawner;
+    private PlayerInventory playerInventory;
 
     //private BufferedImage level = null;
 
 
     public Game() {
 
+        this.playerInventory = new PlayerInventory();
         handler = new Handler();
-        this.addKeyListener(new KeyInput(handler));
+        this.addKeyListener(new KeyInput(handler, playerInventory));
 
         new Window(WIDTH, HEIGHT, "Raft", this);
         //start();
@@ -47,7 +49,7 @@ public class Game extends Canvas implements Runnable {
                 count++;
             }
             if(r.nextInt(100)<32 && count<=3){
-                handler.addObject(new Leaf((r.nextInt(WIDTH))/20*20-40, i, ID.Leaf, handler));
+                handler.addObject(new Leaf((r.nextInt(WIDTH))/20*20-40, i, ID.Leaf, handler, playerInventory));
                 count++;
             }
             if(r.nextInt(100)<32 && count<=3){

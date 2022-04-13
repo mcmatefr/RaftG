@@ -6,10 +6,12 @@ public class KeyInput extends KeyAdapter {
 
     private Handler handler;
     private Random r;
+    private PlayerInventory playerInventory;
 
 
-    public KeyInput(Handler handler) {
+    public KeyInput(Handler handler, PlayerInventory playerInventory) {
         this.handler = handler;
+        this.playerInventory = playerInventory;
     }
 
     public void keyPressed(KeyEvent e) {
@@ -126,7 +128,7 @@ public class KeyInput extends KeyAdapter {
             count++;
         }
         if (r.nextInt(100) < 32 && count <= 3) {
-            handler.addObject(new Leaf((r.nextInt(Game.WIDTH)) / 20 * 20 - 40, -20, ID.Leaf, handler));
+            handler.addObject(new Leaf((r.nextInt(Game.WIDTH)) / 20 * 20 - 40, -20, ID.Leaf, handler, playerInventory));
             count++;
         }
         if (r.nextInt(100) < 32 && count <= 3) {
