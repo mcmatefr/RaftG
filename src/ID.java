@@ -1,4 +1,10 @@
 public enum ID {
     Player(),
-    Enemy();
+    Shark(),
+    Water(),
+    Raft(),
+    Leaf(),
+    Wood(),
+    Waste(),
+    Barrell();
 }
