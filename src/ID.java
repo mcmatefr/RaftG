@@ -7,5 +7,7 @@ public enum ID {
     Wood(),
     Waste(),
     Barrell(),
-    Cooker();
+    Cooker(),
+    Purifier(),
+    Net();
 }

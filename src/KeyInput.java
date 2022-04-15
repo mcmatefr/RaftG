@@ -87,7 +87,7 @@ public class KeyInput extends KeyAdapter {
 
                         this.playerInventory.setLeafCount(this.playerInventory.getLeafCount() - 2);
                         this.playerInventory.setWoodCount(this.playerInventory.getWoodCount() - 2);
-                        handler.addObject(new Raft(tempObject.getX() + 20, tempObject.getY(), ID.Raft, handler));
+                        handler.addObject(new Raft(tempObject.getX() + 20, tempObject.getY(), ID.Raft, handler,playerInventory));
 
                 }
                 //make Cooker
@@ -99,6 +99,25 @@ public class KeyInput extends KeyAdapter {
                     handler.addObject(new Cooker(tempObject.getX() + 20, tempObject.getY(), ID.Cooker, handler));
 
                 }
+                // make Purifier
+                if (key == KeyEvent.VK_P && this.playerInventory.getLeafCount()>=2 &&this.playerInventory.getWasteCount()>=4) {
+
+                    this.playerInventory.setLeafCount(this.playerInventory.getLeafCount() - 2);
+                    this.playerInventory.setWasteCount(this.playerInventory.getWasteCount() - 4);
+                    handler.addObject(new Purifier(tempObject.getX() + 20, tempObject.getY(), ID.Purifier, handler));
+
+                }
+
+                // make Net
+                if (key == KeyEvent.VK_N && this.playerInventory.getLeafCount()>=6 &&this.playerInventory.getWoodCount()>=2) {
+
+                    this.playerInventory.setLeafCount(this.playerInventory.getLeafCount() - 6);
+                    this.playerInventory.setWoodCount(this.playerInventory.getWoodCount() - 2);
+                    handler.addObject(new Net(tempObject.getX() + 20, tempObject.getY(), ID.Net, handler));
+
+                }
+
+
             }
             //objects down
             if (tempObject.getId() == ID.Barrell || tempObject.getId() == ID.Leaf || tempObject.getId() == ID.Waste || tempObject.getId() == ID.Wood) {

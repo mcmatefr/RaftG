@@ -3,6 +3,7 @@ public class PlayerInventory {
     private int woodCount =0;
     private int wasteCount=0;
     private int potatoCount=0;
+    private int fishCount =0;
 
     public int getLeafCount() {
         return this.leafCount;
@@ -47,5 +48,16 @@ public class PlayerInventory {
     }
     public void increasePotatoCount() {
         this.potatoCount++;
+    }
+
+    public int getFishCount() {
+        return fishCount;
+    }
+
+    public void setFishCount(int fishCount) {
+        this.fishCount = fishCount;
+    }
+    public void increaseFishCount() {
+        this.fishCount++;
     }
 }

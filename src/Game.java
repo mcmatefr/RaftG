@@ -28,14 +28,19 @@ public class Game extends Canvas implements Runnable {
         hud = new HUD();
 
         r = new Random();
-        /*
-        Setting up map
-         */
 
-        handler.addObject(new Raft(WIDTH/2-20, HEIGHT/2-30, ID.Raft, handler));
-        handler.addObject(new Raft(WIDTH/2-20, HEIGHT/2-10, ID.Raft, handler));
-        handler.addObject(new Raft(WIDTH/2, HEIGHT/2-30, ID.Raft, handler));
-        handler.addObject(new Raft(WIDTH/2, HEIGHT/2-10 , ID.Raft, handler));
+        //Setting up map
+
+//        for(int k=0; k<=(Game.WIDTH-20);k=k+20) {
+//            for (int l = 0; l <= (Game.HEIGHT - 60); l = l + 20) {
+//                handler.addObject(new Water(k, l, ID.Water, handler,playerInventory));
+//            }
+//        }
+
+        handler.addObject(new Raft(WIDTH/2-20, HEIGHT/2-30, ID.Raft, handler,playerInventory));
+        handler.addObject(new Raft(WIDTH/2-20, HEIGHT/2-10, ID.Raft, handler,playerInventory));
+        handler.addObject(new Raft(WIDTH/2, HEIGHT/2-30, ID.Raft, handler,playerInventory));
+        handler.addObject(new Raft(WIDTH/2, HEIGHT/2-10 , ID.Raft, handler,playerInventory));
         handler.addObject(new Player(WIDTH/2, HEIGHT/2-10, ID.Player, handler));
         handler.addObject(new Shark(WIDTH / 2 - 20, HEIGHT -200, ID.Shark));
 

@@ -2,8 +2,8 @@ import java.awt.*;
 
 public class Leaf extends GameObject{
 
-    Handler handler;
-    PlayerInventory playerInventory;
+    private Handler handler;
+    private PlayerInventory playerInventory;
     public Leaf(int x, int y, ID id, Handler handler, PlayerInventory playerInventory) {
         super(x, y, id);
 
