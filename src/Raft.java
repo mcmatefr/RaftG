@@ -26,7 +26,7 @@ public class Raft extends GameObject{
 
     @Override
     public Rectangle getBounds() {
-        return new Rectangle(x, y, 10, 10);
+        return new Rectangle(x, y, 20, 20);
     }
     public void collision() {
 
@@ -35,7 +35,8 @@ public class Raft extends GameObject{
             GameObject tempObject = handler.object.get(i);
 
             if (tempObject.getId() == ID.Player) {
-                if ((getBounds().intersects(tempObject.getBounds()))) {
+
+                if (!(getBounds().intersects(tempObject.getBounds()))) {
 
                     if (r.nextInt(100) < 25 ) {
                         this.playerInventory.increaseFishCount();
