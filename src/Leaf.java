@@ -1,11 +1,14 @@
 import java.awt.*;
 
 public class Leaf extends GameObject{
-    public static int leaf = 0;
+
     Handler handler;
-    public Leaf(int x, int y, ID id, Handler handler) {
+    PlayerInventory playerInventory;
+    public Leaf(int x, int y, ID id, Handler handler, PlayerInventory playerInventory) {
         super(x, y, id);
+
         this.handler=handler;
+        this.playerInventory=playerInventory;
     }
 
     @Override
@@ -31,9 +34,9 @@ public class Leaf extends GameObject{
 
             if (tempObject.getId() == ID.Player) {
                 if (getBounds().intersects(tempObject.getBounds())) {
-                    leaf++;
+                    this.playerInventory.increaseLeafCount();
                     handler.removeObject(this);
-                    System.out.println(leaf);
+                    System.out.println("Leaf: "+this.playerInventory.getLeafCount());
 
                 }
             }

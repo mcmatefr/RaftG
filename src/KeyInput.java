@@ -6,10 +6,12 @@ public class KeyInput extends KeyAdapter {
 
     private Handler handler;
     private Random r;
+    private PlayerInventory playerInventory;
 
 
-    public KeyInput(Handler handler) {
+    public KeyInput(Handler handler, PlayerInventory playerInventory) {
         this.handler = handler;
+        this.playerInventory=playerInventory;
     }
 
     public void keyPressed(KeyEvent e) {
@@ -79,7 +81,26 @@ public class KeyInput extends KeyAdapter {
                     HUD.HUNGRY--;
                     addNewObject();
                 }
+
+                //make Raft
+                if (key == KeyEvent.VK_R && this.playerInventory.getLeafCount()>=2 &&this.playerInventory.getWoodCount()>=2 ) {
+
+                        this.playerInventory.setLeafCount(this.playerInventory.getLeafCount() - 2);
+                        this.playerInventory.setWoodCount(this.playerInventory.getWoodCount() - 2);
+                        handler.addObject(new Raft(tempObject.getX() + 20, tempObject.getY(), ID.Raft, handler));
+
+                }
+                //make Cooker
+                if (key == KeyEvent.VK_C && this.playerInventory.getLeafCount()>=4 &&this.playerInventory.getWoodCount()>=2 &&this.playerInventory.getWasteCount()>=3) {
+
+                    this.playerInventory.setLeafCount(this.playerInventory.getLeafCount() - 4);
+                    this.playerInventory.setWoodCount(this.playerInventory.getWoodCount() - 2);
+                    this.playerInventory.setWasteCount(this.playerInventory.getWasteCount() - 3);
+                    handler.addObject(new Cooker(tempObject.getX() + 20, tempObject.getY(), ID.Cooker, handler));
+
+                }
             }
+            //objects down
             if (tempObject.getId() == ID.Barrell || tempObject.getId() == ID.Leaf || tempObject.getId() == ID.Waste || tempObject.getId() == ID.Wood) {
                 if (key == KeyEvent.VK_W || key == KeyEvent.VK_S || key == KeyEvent.VK_D ||
                         key == KeyEvent.VK_A || key == KeyEvent.VK_E || key == KeyEvent.VK_Q || key == KeyEvent.VK_Y || key == KeyEvent.VK_X) {
@@ -122,22 +143,24 @@ public class KeyInput extends KeyAdapter {
         int count = 0;
         r = new Random();
         if (r.nextInt(100) < 32 && count <= 3) {
-            handler.addObject(new Wood((r.nextInt(Game.WIDTH)) / 20 * 20 - 40, -20, ID.Wood, handler));
+            handler.addObject(new Wood((r.nextInt(Game.WIDTH)) / 20 * 20 - 40, -20, ID.Wood, handler, playerInventory));
             count++;
         }
         if (r.nextInt(100) < 32 && count <= 3) {
-            handler.addObject(new Leaf((r.nextInt(Game.WIDTH)) / 20 * 20 - 40, -20, ID.Leaf, handler));
+            handler.addObject(new Leaf((r.nextInt(Game.WIDTH)) / 20 * 20 - 40, -20, ID.Leaf, handler,playerInventory));
             count++;
         }
         if (r.nextInt(100) < 32 && count <= 3) {
-            handler.addObject(new Waste((r.nextInt(Game.WIDTH)) / 20 * 20 - 40, -20, ID.Waste, handler));
+            handler.addObject(new Waste((r.nextInt(Game.WIDTH)) / 20 * 20 - 40, -20, ID.Waste, handler,playerInventory));
             count++;
         }
         if (r.nextInt(100) < 4 && count <= 3) {
-            handler.addObject(new Barrell((r.nextInt(Game.WIDTH)) / 20 * 20 - 40, -20, ID.Barrell, handler));
+            handler.addObject(new Barrell((r.nextInt(Game.WIDTH)) / 20 * 20 - 40, -20, ID.Barrell, handler, playerInventory));
             count++;
         }
 
     }
+
+
 
 }

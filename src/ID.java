@@ -6,5 +6,6 @@ public enum ID {
     Leaf(),
     Wood(),
     Waste(),
-    Barrell();
+    Barrell(),
+    Cooker();
 }

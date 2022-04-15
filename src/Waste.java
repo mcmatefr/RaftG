@@ -2,14 +2,16 @@ import java.awt.*;
 
 public class Waste extends GameObject{
    private Handler handler;
-    public Waste(int x, int y, ID id, Handler handler) {
+   private PlayerInventory playerInventory;
+    public Waste(int x, int y, ID id, Handler handler, PlayerInventory playerInventory) {
         super(x, y, id);
         this.handler=handler;
+        this.playerInventory=playerInventory;
     }
 
     @Override
     public void tick() {
-
+        collision();
     }
 
     @Override
@@ -22,6 +24,23 @@ public class Waste extends GameObject{
 
     @Override
     public Rectangle getBounds() {
-        return null;
+        return new Rectangle(x,y,30,30);
+    }
+
+    public void collision() {
+        for (int i = 0; i < handler.object.size(); i++) {
+            GameObject tempObject = handler.object.get(i);
+
+            if (tempObject.getId() == ID.Player) {
+                if (getBounds().intersects(tempObject.getBounds())) {
+                    this.playerInventory.increaseWasteCount();
+                    handler.removeObject(this);
+                    System.out.println("Waste: "+ this.playerInventory.getWasteCount());
+
+                }
+            }
+
+
+        }
     }
 }
