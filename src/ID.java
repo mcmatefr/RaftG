@@ -9,5 +9,6 @@ public enum ID {
     Barrell(),
     Cooker(),
     Purifier(),
-    Net();
+    Net(),
+    Bounds();
 }

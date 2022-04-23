@@ -39,6 +39,14 @@ public class Waste extends GameObject{
 
                 }
             }
+            if (tempObject.getId() == ID.Bounds) {
+                if (getBounds().intersects(tempObject.getBounds())) {
+
+                    handler.removeObject(this);
+
+
+                }
+            }
 
 
         }

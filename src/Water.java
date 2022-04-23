@@ -30,7 +30,7 @@ public class Water extends GameObject {
 
     @Override
     public Rectangle getBounds() {
-        return new Rectangle(x, y, 10, 10);
+        return new Rectangle(x, y, 20, 20);
     }
 
 //    public void collision() {

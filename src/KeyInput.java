@@ -7,6 +7,8 @@ public class KeyInput extends KeyAdapter {
     private Handler handler;
     private Random r;
     private PlayerInventory playerInventory;
+    public static int STEPSCOUNT=0;
+    public static int STEPSCOUNT2=0;
 
 
     public KeyInput(Handler handler, PlayerInventory playerInventory) {
@@ -96,7 +98,8 @@ public class KeyInput extends KeyAdapter {
                     this.playerInventory.setLeafCount(this.playerInventory.getLeafCount() - 4);
                     this.playerInventory.setWoodCount(this.playerInventory.getWoodCount() - 2);
                     this.playerInventory.setWasteCount(this.playerInventory.getWasteCount() - 3);
-                    handler.addObject(new Cooker(tempObject.getX() + 20, tempObject.getY(), ID.Cooker, handler));
+                    handler.addObject(new Cooker(tempObject.getX(), tempObject.getY(), ID.Cooker, handler,playerInventory));
+                    STEPSCOUNT2=HUD.STEPS;
 
                 }
                 // make Purifier
@@ -104,7 +107,8 @@ public class KeyInput extends KeyAdapter {
 
                     this.playerInventory.setLeafCount(this.playerInventory.getLeafCount() - 2);
                     this.playerInventory.setWasteCount(this.playerInventory.getWasteCount() - 4);
-                    handler.addObject(new Purifier(tempObject.getX() + 20, tempObject.getY(), ID.Purifier, handler));
+                    handler.addObject(new Purifier(tempObject.getX() , tempObject.getY(), ID.Purifier, handler));
+                    STEPSCOUNT=HUD.STEPS;
 
                 }
 
@@ -116,6 +120,22 @@ public class KeyInput extends KeyAdapter {
                     handler.addObject(new Net(tempObject.getX() + 20, tempObject.getY(), ID.Net, handler));
 
                 }
+
+                // fishing
+                if (key == KeyEvent.VK_F ) {
+                    r = new Random();
+                    int fishCount=0;
+
+                    if (r.nextInt(100) < 25) {
+                        this.playerInventory.increaseFishCount();
+                        System.out.println("Fish: " + this.playerInventory.getFishCount());
+                        fishCount=this.playerInventory.getFishCount();
+                    }
+
+
+
+                }
+
 
 
             }

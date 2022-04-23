@@ -62,6 +62,14 @@ public class Barrell extends GameObject{
                     handler.removeObject(this);
                 }
             }
+            if (tempObject.getId() == ID.Bounds) {
+                if (getBounds().intersects(tempObject.getBounds())) {
+
+                    handler.removeObject(this);
+
+
+                }
+            }
 
 
         }

@@ -37,13 +37,13 @@ public class Player extends GameObject {
                     HUD.THIRSTY = 0;
                 }
             }
-//            if (tempObject.getId() == ID.Leaf) {
-//                if (getBounds().intersects(tempObject.getBounds())) {
+//           if (tempObject.getId() == ID.Leaf) {
+//               if (getBounds().intersects(tempObject.getBounds())) {
 //                    leaf++;
 //                    handler.removeObject(this);
 //                    System.out.println(leaf);
 //
-//                }
+//               }
 //            }
 
 

@@ -38,6 +38,14 @@ private PlayerInventory playerInventory;
 
                 }
             }
+            if (tempObject.getId() == ID.Bounds) {
+                if (getBounds().intersects(tempObject.getBounds())) {
+
+                    handler.removeObject(this);
+
+
+                }
+            }
 
 
         }
