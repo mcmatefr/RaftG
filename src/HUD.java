@@ -5,6 +5,8 @@ public class HUD {
     public static float HUNGRY =100;
     public static int STEPS=0;
     public static float THIRSTY =100;
+    //private Handler handler;
+    private PlayerInventory playerInventory;
 
 
 
@@ -26,6 +28,17 @@ public class HUD {
         g.drawString("Hungry: "+ (int)HUNGRY, 10, 24);
         g.drawString("Thirsty: "+ (int)THIRSTY, 10, 44);
         g.drawString("Steps: "+ STEPS, 10, 64);
+
+
+        if(HUD.HUNGRY==0 || HUD.THIRSTY==0){
+
+            g.drawString("You lost!", Game.WIDTH/2, Game.HEIGHT/2);
+        }
+        if(HUD.STEPS==1500){
+            g.drawString("You win!", Game.WIDTH/2, Game.HEIGHT/2);
+        }
+
+
 
     }
 

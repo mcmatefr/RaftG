@@ -20,6 +20,8 @@ private PlayerInventory playerInventory;
         g.setColor(Color.PINK);
         g.fillRect((int)x,(int)y,20,20);
 
+        g.drawString("Wood: "+this.playerInventory.getWoodCount(),10,144);
+
     }
 
     @Override

@@ -1,9 +1,9 @@
 import java.awt.*;
 
-public class Potato extends GameObject{
+public class Fish extends GameObject{
     PlayerInventory playerInventory;
     Handler handler;
-    public Potato(int x, int y, ID id, Handler handler, PlayerInventory playerInventory) {
+    public Fish(int x, int y, ID id, Handler handler, PlayerInventory playerInventory) {
         super(x, y, id);
         this.handler=handler;
         this.playerInventory=playerInventory;
@@ -17,8 +17,8 @@ public class Potato extends GameObject{
     @Override
     public void render(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.GRAY);
-        g.drawString("Potato: "+this.playerInventory.getPotatoCount(),10,104);
+        g.setColor(Color.black);
+        g.drawString("Fish: "+this.playerInventory.getFishCount(),10,164);
 
 
     }
@@ -28,3 +28,4 @@ public class Potato extends GameObject{
         return null;
     }
 }
+

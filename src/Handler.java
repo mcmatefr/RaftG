@@ -29,11 +29,10 @@ public class Handler {
 
     }
 
-//    public LinkedList<GameObject> getObject() {
-//        return object;
-//    }
-//
-//    public void setObject(LinkedList<GameObject> object) {
-//        this.object = object;
-//    }
+public void clearAll(){
+    for (int i = 0; i < object.size(); i++) {
+        GameObject tempObject = object.get(i);
+        object.clear();
+    }
+}
 }

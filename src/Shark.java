@@ -25,6 +25,7 @@ public class Shark extends GameObject {
 
     @Override
     public void tick() {
+
         for(int i =0; i< handler.object.size(); i++){
             if(handler.object.get(i).getId()==ID.Player) player=handler.object.get(i);
             if(handler.object.get(i).getId()==ID.Raft) raft=handler.object.get(i);
@@ -71,5 +72,12 @@ public class Shark extends GameObject {
     public void render(Graphics g) {
         g.setColor(Color.red);
         g.fillRect((int)x, (int)y, 20, 20);
+        if(HUD.HUNGRY==0 || HUD.THIRSTY==0){
+            handler.clearAll();
+
+        }
+        if(HUD.STEPS==1500){
+            handler.clearAll();
+        }
     }
 }

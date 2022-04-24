@@ -25,7 +25,7 @@ public class Water extends GameObject {
     public void render(Graphics g) {
 
         Graphics2D g2d = (Graphics2D) g;
-        g.setColor(Color.black);
+        g.setColor(Color.blue);
         g.fillRect((int)x, (int)y, 20, 20);
 
     }

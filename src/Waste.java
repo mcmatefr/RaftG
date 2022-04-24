@@ -20,6 +20,9 @@ public class Waste extends GameObject{
         g.setColor(Color.GRAY);
         g.fillRect((int)x,(int)y,20,20);
 
+        g.drawString("Waste: "+this.playerInventory.getWasteCount(),10,124);
+
+
     }
 
     @Override

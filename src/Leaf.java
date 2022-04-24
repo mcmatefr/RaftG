@@ -23,6 +23,9 @@ public class Leaf extends GameObject{
         Graphics2D g2d = (Graphics2D) g;
         g.setColor(Color.green);
         g.fillRect((int)x,(int)y,20,20);
+        g.drawString("Leaf: "+this.playerInventory.getLeafCount(),10,84);
+        g.drawString("Fish: "+this.playerInventory.getFishCount(),10,164);
+        g.drawString("Potato: "+this.playerInventory.getPotatoCount(),10,104);
     }
 
     @Override
