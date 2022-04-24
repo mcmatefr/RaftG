@@ -16,7 +16,7 @@ public class Player extends GameObject {
     }
 
     public Rectangle getBounds() {
-        return new Rectangle(x, y, 20, 20);
+        return new Rectangle((int)x, (int)y, 20, 20);
     }
 
     @Override
@@ -31,7 +31,7 @@ public class Player extends GameObject {
     public void collision() {
         for (int i = 0; i < handler.object.size(); i++) {
             GameObject tempObject = handler.object.get(i);
-            if (tempObject.getId() == ID.Shark) {
+            if (tempObject.getId() == ID.Shark || tempObject.getId() == ID.SmartShark) {
                 if (getBounds().intersects(tempObject.getBounds())) {
                     HUD.HUNGRY = 0;
                     HUD.THIRSTY = 0;
@@ -54,7 +54,7 @@ public class Player extends GameObject {
     public void render(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g.setColor(Color.white);
-        g.fillRect(x, y, 20, 20);
+        g.fillRect((int)x, (int)y, 20, 20);
 
     }
 

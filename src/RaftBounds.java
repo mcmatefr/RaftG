@@ -1,19 +1,11 @@
 import java.awt.*;
-import java.util.Random;
 
-public class Raft extends GameObject {
+public class RaftBounds extends GameObject{
     private Handler handler;
     private GameObject smartShark;
-    private PlayerInventory playerInventory;
-
-
-
-
-    public Raft(int x, int y, ID id, Handler handler, PlayerInventory playerInventory) {
+    public RaftBounds(int x, int y, ID id,Handler handler) {
         super(x, y, id);
-        this.handler = handler;
-        this.playerInventory = playerInventory;
-
+        this.handler=handler;
     }
 
     @Override
@@ -25,14 +17,13 @@ public class Raft extends GameObject {
     public void render(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g.setColor(Color.orange);
-        g.fillRect((int)x, (int)y, 20, 20);
+        g.fillRect((int)x,(int)y,20,20);
     }
 
     @Override
     public Rectangle getBounds() {
         return new Rectangle((int)x, (int)y, 20, 20);
     }
-
 
 //    public void collision() {
 //
@@ -46,8 +37,9 @@ public class Raft extends GameObject {
 //            if (tempObject.getId() == ID.Player) {
 //                if (getBounds().intersects(tempObject.getBounds())) {
 //
-//                    handler.addObject(new Shark(0, 0, ID.Shark,handler));
+//                    handler.addObject(new Shark((int)smartShark.getX(), (int)smartShark.getY(), ID.Shark,handler));
 //                    handler.removeObject(smartShark);
+//
 //
 //                }
 //            }
@@ -57,4 +49,3 @@ public class Raft extends GameObject {
 //    }
 
 }
-

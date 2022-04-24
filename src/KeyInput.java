@@ -89,7 +89,16 @@ public class KeyInput extends KeyAdapter {
 
                         this.playerInventory.setLeafCount(this.playerInventory.getLeafCount() - 2);
                         this.playerInventory.setWoodCount(this.playerInventory.getWoodCount() - 2);
-                        handler.addObject(new Raft(tempObject.getX() + 20, tempObject.getY(), ID.Raft, handler,playerInventory));
+                        handler.addObject(new Raft((int)tempObject.getX() + 20, (int)tempObject.getY(), ID.Raft, handler,playerInventory));
+//                    handler.addObject(new Water((int)tempObject.getX() + 20, (int)tempObject.getY()-20, ID.Raft, handler,playerInventory));
+//                    handler.addObject(new Water((int)tempObject.getX() + 40, (int)tempObject.getY()-20, ID.Raft, handler,playerInventory));
+//                    handler.addObject(new Water((int)tempObject.getX() , (int)tempObject.getY()-20, ID.Raft, handler,playerInventory));
+//                    handler.addObject(new Water((int)tempObject.getX() , (int)tempObject.getY(), ID.Raft, handler,playerInventory));
+//                    handler.addObject(new Water((int)tempObject.getX()+40 , (int)tempObject.getY(), ID.Raft, handler,playerInventory));
+//                    handler.addObject(new Water((int)tempObject.getX() + 20, (int)tempObject.getY()+20, ID.Raft, handler,playerInventory));
+//                    handler.addObject(new Water((int)tempObject.getX() + 40, (int)tempObject.getY()+20, ID.Raft, handler,playerInventory));
+//                    handler.addObject(new Water((int)tempObject.getX() , (int)tempObject.getY()+20, ID.Raft, handler,playerInventory));
+
 
                 }
                 //make Cooker
@@ -98,7 +107,7 @@ public class KeyInput extends KeyAdapter {
                     this.playerInventory.setLeafCount(this.playerInventory.getLeafCount() - 4);
                     this.playerInventory.setWoodCount(this.playerInventory.getWoodCount() - 2);
                     this.playerInventory.setWasteCount(this.playerInventory.getWasteCount() - 3);
-                    handler.addObject(new Cooker(tempObject.getX(), tempObject.getY(), ID.Cooker, handler,playerInventory));
+                    handler.addObject(new Cooker((int)tempObject.getX(), (int)tempObject.getY(), ID.Cooker, handler,playerInventory));
                     STEPSCOUNT2=HUD.STEPS;
 
                 }
@@ -107,7 +116,7 @@ public class KeyInput extends KeyAdapter {
 
                     this.playerInventory.setLeafCount(this.playerInventory.getLeafCount() - 2);
                     this.playerInventory.setWasteCount(this.playerInventory.getWasteCount() - 4);
-                    handler.addObject(new Purifier(tempObject.getX() , tempObject.getY(), ID.Purifier, handler));
+                    handler.addObject(new Purifier((int)tempObject.getX() , (int)tempObject.getY(), ID.Purifier, handler));
                     STEPSCOUNT=HUD.STEPS;
 
                 }
@@ -117,7 +126,7 @@ public class KeyInput extends KeyAdapter {
 
                     this.playerInventory.setLeafCount(this.playerInventory.getLeafCount() - 6);
                     this.playerInventory.setWoodCount(this.playerInventory.getWoodCount() - 2);
-                    handler.addObject(new Net(tempObject.getX() + 20, tempObject.getY(), ID.Net, handler));
+                    handler.addObject(new Net((int)tempObject.getX() + 20, (int)tempObject.getY(), ID.Net, handler));
 
                 }
 

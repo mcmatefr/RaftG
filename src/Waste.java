@@ -18,13 +18,13 @@ public class Waste extends GameObject{
     public void render(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g.setColor(Color.GRAY);
-        g.fillRect(x,y,20,20);
+        g.fillRect((int)x,(int)y,20,20);
 
     }
 
     @Override
     public Rectangle getBounds() {
-        return new Rectangle(x,y,30,30);
+        return new Rectangle((int)x,(int)y,30,30);
     }
 
     public void collision() {

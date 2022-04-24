@@ -2,9 +2,9 @@ import java.awt.*;
 
 public class HUD {
 
-    public static int HUNGRY =100;
+    public static float HUNGRY =100;
     public static int STEPS=0;
-    public static int THIRSTY =100;
+    public static float THIRSTY =100;
 
 
 
@@ -23,8 +23,8 @@ public class HUD {
 //        g.fillRect(15,15,HUNGRY*2,34);
         g.setColor(Color.white);
 //        g.drawRect(15,15,200,34);
-        g.drawString("Hungry: "+ HUNGRY, 10, 24);
-        g.drawString("Thirsty: "+ THIRSTY, 10, 44);
+        g.drawString("Hungry: "+ (int)HUNGRY, 10, 24);
+        g.drawString("Thirsty: "+ (int)THIRSTY, 10, 44);
         g.drawString("Steps: "+ STEPS, 10, 64);
 
     }

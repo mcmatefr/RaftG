@@ -16,7 +16,7 @@ public class Net extends GameObject{
     public void render(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g.setColor(Color.cyan);
-        g.fillRect(x,y,20,20);
+        g.fillRect((int)x,(int)y,20,20);
 
     }
 

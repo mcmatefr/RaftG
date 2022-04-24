@@ -10,5 +10,6 @@ public enum ID {
     Cooker(),
     Purifier(),
     Net(),
-    Bounds();
+    Bounds(),
+    SmartShark();
 }

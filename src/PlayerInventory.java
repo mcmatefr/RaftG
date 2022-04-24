@@ -1,7 +1,7 @@
 public class PlayerInventory {
-    private int leafCount = 4;
-    private int woodCount =2;
-    private int wasteCount=3;
+    private int leafCount = 0;
+    private int woodCount =0;
+    private int wasteCount=0;
     private int potatoCount=0;
     private int fishCount =0;
 //    private boolean visited = false;

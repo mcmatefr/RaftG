@@ -4,8 +4,7 @@ import java.awt.image.BufferedImage;
 import java.util.Random;
 
 public class Game extends Canvas implements Runnable {
-    //234122996006267687L
-    // 1550691097823471818L
+
     private static final long serialVersionUID = 1L;
     public static final int WIDTH = 720, HEIGHT = 540;
 
@@ -32,19 +31,31 @@ public class Game extends Canvas implements Runnable {
 
         //Setting up map
 
-//        for(int k=0; k<=(Game.WIDTH-20);k=k+20) {
-//            for (int l = 0; l <= (Game.HEIGHT - 60); l = l + 20) {
-//                handler.addObject(new Water(k, l, ID.Water, handler,playerInventory));
-//            }
-//        }
+        for(int k=(Game.WIDTH/2-140); k<=(Game.WIDTH/2+120);k=k+20) {
+            for (int l = (Game.HEIGHT/2-130); l <= (Game.HEIGHT/2 + 110); l = l + 20) {
+                handler.addObject(new Water(k, l, ID.Water, handler,playerInventory));
+            }
+        }
 
         handler.addObject(new Raft(WIDTH / 2 - 20, HEIGHT / 2 - 30, ID.Raft, handler, playerInventory));
-//      handler.removeObject(new Water(WIDTH/2-100, HEIGHT/2-300, ID.Raft, handler,playerInventory));
         handler.addObject(new Raft(WIDTH / 2 - 20, HEIGHT / 2 - 10, ID.Raft, handler, playerInventory));
         handler.addObject(new Raft(WIDTH / 2, HEIGHT / 2 - 30, ID.Raft, handler, playerInventory));
         handler.addObject(new Raft(WIDTH / 2, HEIGHT / 2 - 10, ID.Raft, handler, playerInventory));
+//        handler.addObject(new Water(WIDTH / 2 - 40, HEIGHT / 2 - 50, ID.Water, handler, playerInventory));
+//        handler.addObject(new Water(WIDTH / 2 - 20, HEIGHT / 2 - 50, ID.Water, handler, playerInventory));
+//        handler.addObject(new Water(WIDTH / 2 , HEIGHT / 2 - 50, ID.Water, handler, playerInventory));
+//        handler.addObject(new Water(WIDTH / 2 + 20, HEIGHT / 2 - 50, ID.Water, handler, playerInventory));
+//        handler.addObject(new Water(WIDTH / 2 - 40, HEIGHT / 2 - 30, ID.Water, handler, playerInventory));
+//        handler.addObject(new Water(WIDTH / 2 + 20, HEIGHT / 2 - 30, ID.Water, handler, playerInventory));
+//        handler.addObject(new Water(WIDTH / 2 - 40, HEIGHT / 2 - 10, ID.Water, handler, playerInventory));
+//        handler.addObject(new Water(WIDTH / 2 + 20, HEIGHT / 2 - 10, ID.Water, handler, playerInventory));
+//        handler.addObject(new Water(WIDTH / 2 - 40, HEIGHT / 2 + 10, ID.Water, handler, playerInventory));
+//        handler.addObject(new Water(WIDTH / 2 - 20, HEIGHT / 2 + 10, ID.Water, handler, playerInventory));
+//        handler.addObject(new Water(WIDTH / 2 , HEIGHT / 2 + 10, ID.Water, handler, playerInventory));
+//        handler.addObject(new Water(WIDTH / 2 + 20, HEIGHT / 2 + 10, ID.Water, handler, playerInventory));
         handler.addObject(new Player(WIDTH / 2, HEIGHT / 2 - 10, ID.Player, handler));
         handler.addObject(new Shark(WIDTH / 2 - 20, HEIGHT - 200, ID.Shark,handler));
+        //handler.addObject(new SmartShark(0, 0, ID.SmartShark,handler));
 
         for (int k = 0; k <= (Game.WIDTH - 20); k = k + 20) {
 
@@ -158,7 +169,7 @@ public class Game extends Canvas implements Runnable {
 
     }
 
-    public static int clamp(int var, int min, int max) {
+    public static float clamp(float var, float min, float max) {
         if (var >= max)
             return var = max;
         else if (var <= min)

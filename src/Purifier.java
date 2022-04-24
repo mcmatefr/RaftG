@@ -20,12 +20,12 @@ public class Purifier extends GameObject{
     public void render(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g.setColor(Color.lightGray);
-        g.fillRect(x,y,20,20);
+        g.fillRect((int)x,(int)y,20,20);
     }
 
     @Override
     public Rectangle getBounds() {
-        return new Rectangle(x, y, 20, 20);
+        return new Rectangle((int)x, (int)y, 20, 20);
     }
 
     public void collision() {
@@ -40,7 +40,7 @@ public class Purifier extends GameObject{
 
                   // System.out.println(KeyInput.STEPSCOUNT);
 
-                  if ((HUD.STEPS-KeyInput.STEPSCOUNT)%25>=0){
+                  if ((HUD.STEPS-KeyInput.STEPSCOUNT)/25>=0){
                     //if(stepsCount-count>0){
 
 
