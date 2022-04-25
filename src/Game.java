@@ -41,21 +41,9 @@ public class Game extends Canvas implements Runnable {
         handler.addObject(new Raft(WIDTH / 2 - 20, HEIGHT / 2 - 10, ID.Raft, handler, playerInventory));
         handler.addObject(new Raft(WIDTH / 2, HEIGHT / 2 - 30, ID.Raft, handler, playerInventory));
         handler.addObject(new Raft(WIDTH / 2, HEIGHT / 2 - 10, ID.Raft, handler, playerInventory));
-//        handler.addObject(new Water(WIDTH / 2 - 40, HEIGHT / 2 - 50, ID.Water, handler, playerInventory));
-//        handler.addObject(new Water(WIDTH / 2 - 20, HEIGHT / 2 - 50, ID.Water, handler, playerInventory));
-//        handler.addObject(new Water(WIDTH / 2 , HEIGHT / 2 - 50, ID.Water, handler, playerInventory));
-//        handler.addObject(new Water(WIDTH / 2 + 20, HEIGHT / 2 - 50, ID.Water, handler, playerInventory));
-//        handler.addObject(new Water(WIDTH / 2 - 40, HEIGHT / 2 - 30, ID.Water, handler, playerInventory));
-//        handler.addObject(new Water(WIDTH / 2 + 20, HEIGHT / 2 - 30, ID.Water, handler, playerInventory));
-//        handler.addObject(new Water(WIDTH / 2 - 40, HEIGHT / 2 - 10, ID.Water, handler, playerInventory));
-//        handler.addObject(new Water(WIDTH / 2 + 20, HEIGHT / 2 - 10, ID.Water, handler, playerInventory));
-//        handler.addObject(new Water(WIDTH / 2 - 40, HEIGHT / 2 + 10, ID.Water, handler, playerInventory));
-//        handler.addObject(new Water(WIDTH / 2 - 20, HEIGHT / 2 + 10, ID.Water, handler, playerInventory));
-//        handler.addObject(new Water(WIDTH / 2 , HEIGHT / 2 + 10, ID.Water, handler, playerInventory));
-//        handler.addObject(new Water(WIDTH / 2 + 20, HEIGHT / 2 + 10, ID.Water, handler, playerInventory));
+
         handler.addObject(new Player(WIDTH / 2, HEIGHT / 2 - 10, ID.Player, handler,playerInventory));
         handler.addObject(new Shark(WIDTH / 2 - 20, HEIGHT - 200, ID.Shark,handler,playerInventory));
-        //handler.addObject(new SmartShark(0, 0, ID.SmartShark,handler));
 
         for (int k = 0; k <= (Game.WIDTH - 20); k = k + 20) {
 
@@ -84,9 +72,7 @@ public class Game extends Canvas implements Runnable {
         }
 
 
-        //for (int i=0; i<50; i++){
-        // handler.addObject(new Player(r.nextInt(WIDTH),r.nextInt(HEIGHT),ID.Player));
-        //}
+        
 
 //        BufferedImageLoader loader = new BufferedImageLoader();
 //        level = loader.loadImage("/level.png");

@@ -36,14 +36,7 @@ public class Cooker extends GameObject {
             GameObject tempObject = handler.object.get(i);
             if (tempObject.getId() == ID.Player) {
                 if (getBounds().intersects(tempObject.getBounds())) {
-//                   // if(playerInventory.getPotatoCount()>0){
-//                        playerInventory.setPotatoCount(playerInventory.getPotatoCount()-1);
-//                        System.out.println("Potato: "+playerInventory.getPotatoCount());
-//                        if ((HUD.STEPS - KeyInput.STEPSCOUNT2) / 25 >= 0) {
-//                            HUD.HUNGRY = HUD.HUNGRY + 60;
-//
-//                       // }
-//                    }
+
                         if(playerInventory.getFishCount()>0 && (HUD.STEPS - KeyInput.STEPSCOUNT2) / 25 >= 0){
 
                                 HUD.HUNGRY = HUD.HUNGRY + 60;
