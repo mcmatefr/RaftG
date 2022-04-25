@@ -7,11 +7,16 @@ public class Shark extends GameObject {
     private GameObject player;
     private GameObject water;
     private GameObject raft;
+    private PlayerInventory playerInventory;
+    private int timer = 1000;
+    private float tempX=0;
+    private float tempY=0;
 
 
-    public Shark(int x, int y, ID id, Handler handler) {
+    public Shark(int x, int y, ID id, Handler handler, PlayerInventory playerInventory) {
         super(x, y, id);
         this.handler = handler;
+        this.playerInventory=playerInventory;
         velX=1;
         velY=1;
 
@@ -61,9 +66,25 @@ public class Shark extends GameObject {
                     velX = (float) ((-1.0 / distance) * diffX);
                     velY = (float) ((-1.0 / distance) * diffY);
                 }
-
-
             }
+            if (tempObject.getId() == ID.Player) {
+                if (getBounds().intersects(tempObject.getBounds()) && this.playerInventory.getPikeCount()>0) {
+                    this.playerInventory.decreasePikeCount();
+                    timer --;
+                    if (timer>500){
+                        tempX=velX;
+                        tempY=velY;
+                        velX=0;
+                        velY=0;
+                    }
+                    if (timer<50){
+                        velX=tempX;
+                        velY= tempY;
+
+                    }
+                }
+            }
+
         }
 
     }

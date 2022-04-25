@@ -50,7 +50,16 @@ public class Waste extends GameObject{
 
                 }
             }
+            if (tempObject.getId() == ID.Net) {
+                if (getBounds().intersects(tempObject.getBounds())) {
 
+                    this.playerInventory.increaseWasteCount();
+                    handler.removeObject(this);
+                    System.out.println("Waste: "+ this.playerInventory.getWasteCount());
+
+
+                }
+            }
 
         }
     }

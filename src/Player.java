@@ -1,16 +1,19 @@
 import java.awt.*;
 
 public class Player extends GameObject {
-    Handler handler;
+   private Handler handler;
+    private PlayerInventory playerInventory;
+    private int timer =100;
 //    protected int leaf = 0;
 //    protected int wood = 0;
 //    protected int waste = 0;
 //    protected int potato = 0;
 //    protected int water = 0;
 
-    public Player(int x, int y, ID id, Handler handler) {
+    public Player(int x, int y, ID id, Handler handler, PlayerInventory playerInventory) {
         super(x, y, id);
         this.handler = handler;
+        this.playerInventory=playerInventory;
 
         //velX=1;
     }
@@ -31,11 +34,12 @@ public class Player extends GameObject {
     public void collision() {
         for (int i = 0; i < handler.object.size(); i++) {
             GameObject tempObject = handler.object.get(i);
-            if (tempObject.getId() == ID.Shark || tempObject.getId() == ID.SmartShark) {
-                if (getBounds().intersects(tempObject.getBounds())) {
+            if (tempObject.getId() == ID.Shark ) {
+                if (getBounds().intersects(tempObject.getBounds()) &&  this.playerInventory.getPikeCount()<1) {
                     HUD.HUNGRY = 0;
                     HUD.THIRSTY = 0;
                 }
+
             }
 //           if (tempObject.getId() == ID.Leaf) {
 //               if (getBounds().intersects(tempObject.getBounds())) {

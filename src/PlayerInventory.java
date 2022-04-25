@@ -4,6 +4,7 @@ public class PlayerInventory {
     private int wasteCount=0;
     private int potatoCount=0;
     private int fishCount =0;
+    private int pikeCount =0;
 //    private boolean visited = false;
  //   private int stepsCount=0;
 
@@ -69,8 +70,21 @@ public class PlayerInventory {
         this.fishCount--;
     }
 
+    public int getPikeCount() {
+        return pikeCount;
+    }
 
-//    public boolean isVisited() {
+    public void setPikeCount(int pikeCount) {
+        this.pikeCount = pikeCount;
+    }
+    public void increasePikeCount() {
+        this.pikeCount=this.pikeCount+50;
+    }
+    public void decreasePikeCount() {
+        this.pikeCount--;
+    }
+
+    //    public boolean isVisited() {
 //        return visited;
 //    }
 //

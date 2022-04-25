@@ -90,14 +90,7 @@ public class KeyInput extends KeyAdapter {
                         this.playerInventory.setLeafCount(this.playerInventory.getLeafCount() - 2);
                         this.playerInventory.setWoodCount(this.playerInventory.getWoodCount() - 2);
                         handler.addObject(new Raft((int)tempObject.getX() + 20, (int)tempObject.getY(), ID.Raft, handler,playerInventory));
-//                    handler.addObject(new Water((int)tempObject.getX() + 20, (int)tempObject.getY()-20, ID.Raft, handler,playerInventory));
-//                    handler.addObject(new Water((int)tempObject.getX() + 40, (int)tempObject.getY()-20, ID.Raft, handler,playerInventory));
-//                    handler.addObject(new Water((int)tempObject.getX() , (int)tempObject.getY()-20, ID.Raft, handler,playerInventory));
-//                    handler.addObject(new Water((int)tempObject.getX() , (int)tempObject.getY(), ID.Raft, handler,playerInventory));
-//                    handler.addObject(new Water((int)tempObject.getX()+40 , (int)tempObject.getY(), ID.Raft, handler,playerInventory));
-//                    handler.addObject(new Water((int)tempObject.getX() + 20, (int)tempObject.getY()+20, ID.Raft, handler,playerInventory));
-//                    handler.addObject(new Water((int)tempObject.getX() + 40, (int)tempObject.getY()+20, ID.Raft, handler,playerInventory));
-//                    handler.addObject(new Water((int)tempObject.getX() , (int)tempObject.getY()+20, ID.Raft, handler,playerInventory));
+
 
 
                 }
@@ -142,6 +135,16 @@ public class KeyInput extends KeyAdapter {
                     }
 
 
+
+                }
+
+                if (key == KeyEvent.VK_K && this.playerInventory.getLeafCount()>=4 &&this.playerInventory.getWoodCount()>=4 &&this.playerInventory.getWasteCount()>=4) {
+
+                    this.playerInventory.setLeafCount(this.playerInventory.getLeafCount() - 4);
+                    this.playerInventory.setWoodCount(this.playerInventory.getWoodCount() - 4);
+                    this.playerInventory.setWasteCount(this.playerInventory.getWasteCount() - 4);
+                    this.playerInventory.increasePikeCount();
+                    System.out.println("Pike: " + this.playerInventory.getPikeCount());
 
                 }
 

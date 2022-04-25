@@ -70,6 +70,36 @@ public class Barrell extends GameObject{
 
                 }
             }
+            if (tempObject.getId() == ID.Net) {
+                if (getBounds().intersects(tempObject.getBounds())) {
+
+                    for (int count =0; count<5;) {
+                        if (r.nextInt(100) < 25 && count <=5) {
+                            this.playerInventory.increaseWasteCount();
+                            System.out.println("Waste: " + this.playerInventory.getWasteCount());
+                            count++;
+                        }
+                        if (r.nextInt(100) < 25 && count <=5) {
+                            this.playerInventory.increasePotatoCount();
+                            System.out.println("Potato: " + this.playerInventory.getPotatoCount());
+                            count++;
+                        }
+                        if (r.nextInt(100) < 25 && count <=5) {
+                            this.playerInventory.increaseLeafCount();
+                            System.out.println("Leaf: " + this.playerInventory.getLeafCount());
+                            count++;
+                        }
+                        if (r.nextInt(100) < 25 && count <=5) {
+                            this.playerInventory.increaseWoodCount();
+                            System.out.println("Wood: " + this.playerInventory.getWoodCount());
+                            count++;
+                        }
+                    }
+                    handler.removeObject(this);
+
+
+                }
+            }
 
 
         }

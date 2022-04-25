@@ -41,7 +41,7 @@ public class Leaf extends GameObject{
                 if (getBounds().intersects(tempObject.getBounds())) {
                     this.playerInventory.increaseLeafCount();
                     handler.removeObject(this);
-                    System.out.println("Leaf: "+this.playerInventory.getLeafCount());
+                    System.out.println("Leaf: " + this.playerInventory.getLeafCount());
 
 
                 }
@@ -54,9 +54,19 @@ public class Leaf extends GameObject{
 
 
                 }
+                if (tempObject.getId() == ID.Net) {
+                    if (getBounds().intersects(tempObject.getBounds())) {
+
+                        this.playerInventory.increaseLeafCount();
+                        handler.removeObject(this);
+                        System.out.println("Leaf: " + this.playerInventory.getLeafCount());
+
+
+                    }
+                }
+
+
             }
-
-
         }
     }
 }

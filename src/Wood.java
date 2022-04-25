@@ -48,7 +48,16 @@ private PlayerInventory playerInventory;
 
                 }
             }
+            if (tempObject.getId() == ID.Net) {
+                if (getBounds().intersects(tempObject.getBounds())) {
 
+                    this.playerInventory.increaseWoodCount();
+                    handler.removeObject(this);
+                    System.out.println("Wood: " + this.playerInventory.getWoodCount());
+
+
+                }
+            }
 
         }
     }
