@@ -72,7 +72,7 @@ public class Game extends Canvas implements Runnable {
         }
 
 
-        
+
 
 //        BufferedImageLoader loader = new BufferedImageLoader();
 //        level = loader.loadImage("/level.png");
