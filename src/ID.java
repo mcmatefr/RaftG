@@ -11,5 +11,7 @@ public enum ID {
     Purifier(),
     Net(),
     Bounds(),
-    SmartShark();
+    Fish(),
+    Potato();
+
 }

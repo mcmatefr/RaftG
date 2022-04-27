@@ -25,7 +25,7 @@ public class Fish extends GameObject{
 
     @Override
     public Rectangle getBounds() {
-        return null;
+        return new Rectangle((int)x, (int)y, 20, 20);
     }
 }
 

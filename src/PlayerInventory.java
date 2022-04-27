@@ -5,8 +5,7 @@ public class PlayerInventory {
     private int potatoCount=0;
     private int fishCount =0;
     private int pikeCount =0;
-//    private boolean visited = false;
- //   private int stepsCount=0;
+
 
     public int getLeafCount() {
         return this.leafCount;
@@ -84,22 +83,4 @@ public class PlayerInventory {
         this.pikeCount--;
     }
 
-    //    public boolean isVisited() {
-//        return visited;
-//    }
-//
-//    public void setVisited(boolean visited) {
-//        this.visited = visited;
-//    }
-
-//    public int getStepsCount() {
-//        return stepsCount;
-//    }
-//
-//    public void setStepsCount(int stepsCount) {
-//        this.stepsCount = stepsCount;
-//    }
-//    public void increaseStepsCount() {
-//        this.stepsCount++;
-//    }
 }
