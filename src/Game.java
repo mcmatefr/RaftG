@@ -2,8 +2,13 @@ import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.util.Random;
-
+/**
+* Raft game
+* @author Mate Csanyi
+ * @version 1.9
+ */
 public class Game extends Canvas implements Runnable {
+
 
     private static final long serialVersionUID = 1L;
     public static final int WIDTH = 720, HEIGHT = 540;
@@ -17,14 +22,16 @@ public class Game extends Canvas implements Runnable {
 
     //private BufferedImage level = null;
 
-
+    /**
+     * RaftGame alap terkep beallitas
+     */
     public Game() {
         this.playerInventory = new PlayerInventory();
         handler = new Handler();
         this.addKeyListener(new KeyInput(handler, playerInventory));
 
         new Window(WIDTH, HEIGHT, "Raft", this);
-        //start();
+
         hud = new HUD();
 
         r = new Random();
@@ -82,6 +89,9 @@ public class Game extends Canvas implements Runnable {
 
     }
 
+    /**
+     * Thread elkezdese
+     */
     public synchronized void start() {
         isRunning = true;
         thread = new Thread(this);
@@ -89,6 +99,9 @@ public class Game extends Canvas implements Runnable {
 
     }
 
+    /**
+     * Thread leallitasa
+     */
     public void stop() {
         isRunning = false;
         try {
@@ -100,6 +113,10 @@ public class Game extends Canvas implements Runnable {
         thread.start();
     }
 
+    /**
+     * Game loop <br>
+     * Frame frissitese
+     */
     public void run() {
         this.requestFocus();
 
@@ -122,13 +139,18 @@ public class Game extends Canvas implements Runnable {
 
             if (System.currentTimeMillis() - timer > 1000) {
                 timer += 1000;
-                //System.out.println("FPS: "+frames);
+
                 frames = 0;
 
             }
         }
         stop();
     }
+
+    /**
+     * Frissiti az objektumokat
+     */
+
 
     public void tick() {
 
@@ -137,6 +159,10 @@ public class Game extends Canvas implements Runnable {
 
     }
 
+    /**
+     * Buffer keszitese <br>
+     * Megjelenites beallitasa
+     */
     public void render() {
         BufferStrategy bs = this.getBufferStrategy();
         if (bs == null) {
@@ -155,6 +181,13 @@ public class Game extends Canvas implements Runnable {
 
     }
 
+    /**
+     * Overloading handler
+     * @param var aktualis ertek
+     * @param min minimal ertek
+     * @param max maximal ertek
+     * @return minimal es maximal ertek kozotti szam
+     */
     public static float clamp(float var, float min, float max) {
         if (var >= max)
             return var = max;
@@ -163,6 +196,10 @@ public class Game extends Canvas implements Runnable {
         else return var;
     }
 
+    /**
+     * A main fuggveny
+     * @param args parancssori parameterek
+     */
     public static void main(String[] args) {
         new Game();
     }

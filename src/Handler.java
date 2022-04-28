@@ -1,11 +1,17 @@
 import java.awt.*;
 import java.util.LinkedList;
 
+/**
+ * Osszes objektumunk karbantartasa <br>
+ * Vegigmegy az objektumokon frissiti oket vagy megjeleniti
+ */
 public class Handler {
 
     LinkedList <GameObject> object = new LinkedList<GameObject>();
 
-
+    /**
+     * Vegigmegy az objektumokon es frissiti
+     */
     public void tick (){
         for (int i=0; i < object.size(); i++ ){
             GameObject  tempObject = object.get(i);
@@ -13,6 +19,10 @@ public class Handler {
         }
     }
 
+    /**
+     * Vegigmegy az objektumokon es megjeleniti <br>
+     * @param g grafikus parameter
+     */
     public void render (Graphics g){
         for (int i=0; i < object.size(); i++ ){
             GameObject  tempObject = object.get(i);
@@ -20,16 +30,28 @@ public class Handler {
         }
     }
 
+    /**
+     * Uj objektumot jelenit meg
+     * @param object az uj objektum
+     */
     public void addObject (GameObject object){
         this.object.add(object);
 
     }
+
+    /**
+     * Meglevo objektumot torol
+     * @param object a meglevo objektum
+     */
     public void removeObject (GameObject object){
         this.object.remove(object);
 
     }
 
-public void clearAll(){
+    /**
+     * Torol minden objektumot a kepernyorol
+     */
+    public void clearAll(){
     for (int i = 0; i < object.size(); i++) {
         GameObject tempObject = object.get(i);
         object.clear();
