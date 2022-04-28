@@ -1,3 +1,6 @@
+/**
+ * Level,fa, hulladek, krumpli, hal es landzsa darab szam kezelese
+ */
 public class PlayerInventory {
     private int leafCount = 0;
     private int woodCount =0;

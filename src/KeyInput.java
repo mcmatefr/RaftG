@@ -2,6 +2,9 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.Random;
 
+/**
+ * Gomb leutesek kezelese
+ */
 public class KeyInput extends KeyAdapter {
 
     private Handler handler;
@@ -10,12 +13,20 @@ public class KeyInput extends KeyAdapter {
     public static int STEPSCOUNT=0;
     public static int STEPSCOUNT2=0;
 
-
+    /**
+     * KeyInput constructor
+     * @param handler objektum karbantartasa
+     * @param playerInventory valtozok kezelese
+     */
     public KeyInput(Handler handler, PlayerInventory playerInventory) {
         this.handler = handler;
         this.playerInventory=playerInventory;
     }
 
+    /**
+     * Gombnyomas fuggvenyeben vegez utasitasokat
+     * @param e billentyu kovetes
+     */
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
 
@@ -159,23 +170,16 @@ public class KeyInput extends KeyAdapter {
                 }
             }
 
-//            if (tempObject.getId() == ID.Shark) {
-//                if (key == KeyEvent.VK_S || key == KeyEvent.VK_W || key == KeyEvent.VK_D ||
-//                        key == KeyEvent.VK_A || key == KeyEvent.VK_E || key == KeyEvent.VK_Q || key == KeyEvent.VK_Y || key == KeyEvent.VK_X) {
-//                    //tempObject.setY(tempObject.getY() + 20);
-//                    //tempObject.setX(tempObject.getX() + 20);
-//
-//                    if(tempObject.getY()<=0 || tempObject.getY()>=Game.HEIGHT-50) tempObject.setY(tempObject.getY() + (20*(-1)));
-//                    if(tempObject.getX()<=0 || tempObject.getX()>=Game.WIDTH-20) tempObject.setX(tempObject.getX() + (20*(-1)));
-//                }
-//            }
+
 
 
         }
         if (key == KeyEvent.VK_ESCAPE) System.exit(1);
     }
 
-
+    /**
+     * Lepesre uj objektumokat jelenit meg leiras szerint
+     */
     public void addNewObject() {
 
         int count = 0;

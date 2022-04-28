@@ -1,3 +1,8 @@
+/**
+ * ID enumeration <br>
+ * Osszes ID megadasa<br>
+ * Ezutan hivatkozhatunk rajuk ezekkel a nevekkel
+ */
 public enum ID {
     Player(),
     Shark(),

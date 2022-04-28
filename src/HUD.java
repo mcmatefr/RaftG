@@ -1,5 +1,8 @@
 import java.awt.*;
 
+/**
+ * Ehseg, szomjusag es lepesszam megjelenitese
+ */
 public class HUD {
 
     public static float HUNGRY =100;
@@ -7,15 +10,20 @@ public class HUD {
     public static float THIRSTY =100;
 
 
-
-
-
+    /**
+     * Frissites
+     */
     public void tick(){
 
         HUNGRY=Game.clamp(HUNGRY,0,100);
         THIRSTY=Game.clamp(THIRSTY,0,100);
 
     }
+
+    /**
+     * Megjelenites
+     * @param g grafikus parameter
+     */
     public void render(Graphics g){
 
 

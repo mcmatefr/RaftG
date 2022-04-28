@@ -1,5 +1,9 @@
 import java.awt.*;
 
+/**
+ * Hatar
+ *  Amelyik ennek az objektumnak nekimegy az torlodik
+ */
 public class Bounds extends GameObject{
     private Handler handler;
     public Bounds(int x, int y, ID id,Handler handler) {

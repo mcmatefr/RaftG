@@ -31,7 +31,7 @@ public class Handler {
     }
 
     /**
-     * Uj objektumot jelenit meg
+     * Uj objektumot ad a listahoz
      * @param object az uj objektum
      */
     public void addObject (GameObject object){
@@ -49,7 +49,7 @@ public class Handler {
     }
 
     /**
-     * Torol minden objektumot a kepernyorol
+     * Torol minden objektumot a listarol
      */
     public void clearAll(){
     for (int i = 0; i < object.size(); i++) {
